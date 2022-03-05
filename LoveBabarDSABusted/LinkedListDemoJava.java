@@ -78,6 +78,29 @@ class LinkedListDemoJava {
     System.out.println();
   }
 
+  public static LLNode kReverse(LLNode head, int k) {
+		if(head == null) return head;
+        
+        LLNode pre = null;
+        LLNode forward = null;
+        LLNode curr = head;
+        int count = 0;
+        
+        while(count < k && curr != null) {
+            forward = curr.next;
+   			    curr.next = pre;
+            pre = curr;
+            curr = forward;
+            count++;
+        }
+        
+        if(curr != null) {
+            head.next = kReverse(curr, k);
+        }
+        
+        return pre;
+	}
+
   public static void main(String[] args) {
     LLNode head = new LLNode(4);
     printLL(head);
