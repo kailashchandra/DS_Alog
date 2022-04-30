@@ -94,6 +94,9 @@ class KQInArr {
     kQ.enqueue(12, 2);
     kQ.enqueue(13, 3);
     kQ.enqueue(20, 1);
+    //TO REPRODUCE OVERFLOW
+    kQ.enqueue(30, 1);
+    kQ.enqueue(40, 1);
 
     System.out.println(kQ.dequeue(1));
     System.out.println();
